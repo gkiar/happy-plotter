@@ -55,7 +55,7 @@ class histogram_windowing():
                          color='#888888')
             else:
                 plt.plot(self.txs[xl:xh], self.tpdfs[key][xl:xh], alpha=0.4)
-            plt.title(self.name + ' B0 histograms')
+            plt.title(self.name + ' histograms')
         plt.xlabel('Voxel Intensity')
         plt.ylabel('Probability Density')
         plt.show()
