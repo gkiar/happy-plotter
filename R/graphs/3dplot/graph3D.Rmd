@@ -1,0 +1,72 @@
+---
+title: "3D Graph Plotting"
+author: "Greg Kiar"
+date: "April 20, 2016"
+output:
+  html_document:
+    fig_caption: yes
+    fig_height: 4
+    fig_width: 4
+    fig_retina: 2
+    highlight: pygments
+    keep_md: yes
+    number_sections: yes
+    theme: cerulean
+    toc: yes
+    toc_depth: 3
+    mode: standalone
+  pdf_document:
+    fig_caption: yes
+    keep_tex: yes
+    number_sections: yes
+---
+
+Let's say you have a graph that you want to visualize. This graph has several attributes, including locations of the nodes, and weights of the edges. Many common graph visualization tools do not allow you to provide coordinates for the nodes, and many others only plot in 2D. Thankfully, `igraph` in R exploits the `rgl` package and uses GL graphics to overcome this. Let's begin:
+
+As mentioned, we need `igraph` for this, so let's load it.
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rgl)
+
+knit_hooks$set(
+  webgl = hook_webgl
+  
+)
+```
+
+```{r}
+library(igraph)
+```
+
+Now let's load our graph and extract the attributes of interest, putting them into a format that we can use to plot them. This graph happens to be a connectome (map of the brain).
+
+```{r}
+g <- read.graph('./demo_graph.graphml', format='graphml')
+centroids <- get.vertex.attribute(g, 'centroid')
+print(centroids[1:5])
+```
+
+We notice that in this case, the centroids we would like to plot are stored as strings. The format igraph expects is an `Nx3` matrix, where `N` is the number of nodes in your graph. Therefore, we must do some string acrobatics to get the centroids into the format we want.
+
+```{r}
+layouts <- matrix(nrow = length(centroids), ncol = 3)
+for (i in 1:length(centroids)) {
+  temp <- na.omit(as.numeric(unlist(strsplit(unlist(centroids[i]), "[^0-9]+"))))
+  layouts[i,] <- temp
+}
+print(layouts[1:5,])
+```
+
+Great! Now we can assign this value to our layour, and plot our graph. We set several attributes here, including changing vertex color, size, and turning off labels. We also change the color of our edges, and set their width to be proportional to the edge weights in our graph.
+
+```{r, webgl=TRUE, fig.width=7, fig.height=7}
+g$layout <- layouts
+
+rglplot(g, layout = g$layout,
+        vertex.label = NA, vertex.size = 12, vertex.color='tomato1',
+        edge.width = log10(get.edge.attribute(g, 'weight')), edge.color='paleturquoise1')
+```
+
+If we also wish to save our graph we can use the following block to save it as a pdf:  `rgl.postscript('./mygraph.pdf', fmt = 'pdf')`
+

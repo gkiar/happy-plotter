@@ -3,5 +3,8 @@ This repo contains handy classes and example notebooks that I've made through
 my endless struggles with science and Jupyter.
 
 
-[**``Histogram Windowing``**](./histograms/example_histogram_window.ipynb)
-  > Enables dynamic windowing of multiple histograms within a dataset
+[**``Waveform Windowing``**](./Python/histograms/example_histogram_window.ipynb)
+  > Dynamic windowing of multiple waveforms
+
+[**``3D Graph Plotting``**](./R/graphs/3dplot/graph3D.md)
+  > 3D plotting an manipulation of graph objects with spatial attributes
