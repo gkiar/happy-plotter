@@ -1,0 +1,46 @@
+---
+title: "RGL: 3D plot example"
+author: "Jesse Leigh Patsolic"
+date: '`r Sys.Date()`'
+output:
+  html_document:
+    fig_caption: yes
+    fig_height: 4
+    fig_width: 4
+    fig_retina: 2
+    highlight: pygments
+    keep_md: no
+    number_sections: yes
+    theme: cerulean
+    toc: yes
+    toc_depth: 3
+    mode: standalone
+  pdf_document:
+    fig_caption: yes
+    keep_tex: yes
+    number_sections: yes
+---
+
+```{r setup,eval=FALSE,include=FALSE,results='asis',message=FALSE,warning=FALSE}
+require(rgl)
+require(rglwidget)
+require(rmarkdown)
+#render('rgl3d.Rmd')
+```
+
+## Generate toy data
+```{r dataGen}
+set.seed(2357)
+n <- 500
+dat <- data.frame(x = runif(n), 
+                  y = rnorm(n),
+                  z=rpois(n,lambda=3),
+                  col=rbinom(n,size=4,prob=c(1:4)/4))
+```
+
+```{r cc_3dLog}
+rgl::plot3d(dat$x,dat$y,dat$z,type='s',size=1,col=dat$col+1)
+subid <- currentSubscene3d()
+rglwidget(elementId="3d",width=720,height=720)
+```
+
