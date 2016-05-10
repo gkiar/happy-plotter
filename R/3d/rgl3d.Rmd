@@ -9,7 +9,7 @@ output:
     fig_width: 4
     fig_retina: 2
     highlight: pygments
-    keep_md: no
+    keep_md: yes
     number_sections: yes
     theme: cerulean
     toc: yes
@@ -26,6 +26,7 @@ require(rgl)
 require(rglwidget)
 require(rmarkdown)
 #render('rgl3d.Rmd')
+#system('open rgl3d.html')
 ```
 
 ## Generate toy data
