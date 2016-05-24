@@ -16,7 +16,7 @@ your window the image in its final state will be saved to the desired filename.
 
 Using the files in this directory, the code has been run like this:
 ```
-python 3d_fibers.py fibers.npz -o fibers.png
+python viz_3d_fibers.py fibers.npz -o fibers.png
 ```
 
 #### Calling from within a script
