@@ -3,7 +3,8 @@
 This script provides a 3D interactive plot of fiber streamlines for manipulation
 and optionally saves the images to disk. It can either be called directly using
 a prompt from the commandline or imported into a python session and called inline
-in your Python script.
+in your Python script. This makes use of the DiPy library and is almost a verbatim
+copy of their example found [here](http://nipy.org/dipy/examples_built/viz_bundles.html#example-viz-bundles).
 
 
 #### Calling from Commandline
@@ -37,6 +38,13 @@ else:
     visualize(fibers)
 
 ```
+
+#### Output
+
+The script, when given the `-o` flag, returns a `.png` formatted image of your streamlines
+using oriented colouring. 
+
+![](fibers.png)
 
 
 P.s. The fiber file attached is heavily downsampled in order to reduce the time
