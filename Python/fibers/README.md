@@ -26,7 +26,7 @@ the library and then call the desired function. An example of using this is
 shown here:
 
 ```{python}
-from 3d_fibers import visualize
+from viz_3d_fibers import visualize
 
 fibers =   # your fibers here....
 outf =     # your outfile name here....
