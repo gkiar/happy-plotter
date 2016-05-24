@@ -21,6 +21,7 @@ from argparse import ArgumentParser
 from dipy.viz import window, actor
 import numpy as np
 
+
 def visualize(fibers, outf=None):
     """
     Takes fiber streamlines and visualizes them using DiPy
@@ -41,10 +42,7 @@ def visualize(fibers, outf=None):
 
     # Set camera orientation properties
     # TODO: allow this as an argument
-    renderer.set_camera()
-                        # position=(-176.42, 118.52, 128.20),
-                        # focal_point=(113.30, 128.31, 76.56),
-                        # view_up=(0.18, 0.00, 0.98))
+    renderer.set_camera()  # args are: position=(), focal_point=(), view_up=()
 
     # Add streamlines to viz session
     renderer.add(stream_actor)
@@ -56,6 +54,7 @@ def visualize(fibers, outf=None):
     # Saves file, if you're into that sort of thing...
     if outf is not None:
         window.record(renderer, out_path=outf, size=(600, 600))
+
 
 def main():
     parser = ArgumentParser(description="Creates 3D vizualization of fibers")
