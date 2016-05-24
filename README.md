@@ -11,5 +11,7 @@ Well, lucky for you (and future me), here lives code that will help you make bea
 #### Python
 [**``Waveform Windowing``**](./Python/histograms/example_histogram_window.ipynb)  > Dynamic windowing of multiple waveforms
 
+[**``3D Fiber Visualization``**](./Python/fibers/README.md)  > 3D Interactive visualization of DiPy formatted fiber streamlines
+
 #### R
 [**``3D Graph Plotting``**](./R/graphs/3dplot/graph3D.md)  > 3D plotting an manipulation of graph objects with spatial attributes
