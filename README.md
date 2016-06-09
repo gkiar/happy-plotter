@@ -17,3 +17,6 @@ Well, lucky for you (and future me), here lives code that will help you make bea
 [**``3D Graph Plotting``**](./R/graphs/3dplot/graph3D.md)  > 3D plotting an manipulation of graph objects with spatial attributes
 
 [**``3D Scatter Plots``**](./R/3d/rgl3d.html)  > 3D scatter plots and other tricks 
+
+
+[**``Correlation Plots``**](./R/CorrPlots.ipynb)  > Nice colors with block outlines.
