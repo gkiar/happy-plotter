@@ -13,6 +13,8 @@ Well, lucky for you (and future me), here lives code that will help you make bea
 
 [**``3D Fiber Visualization``**](./Python/fibers/README.md)  > 3D Interactive visualization of DiPy formatted fiber streamlines
 
+[**``1D Line Plot``**](./Python/1d-data/atlas_timeline.ipynb)  > Timeline-esque display of 1D labeled data
+
 #### R
 [**``3D Graph Plotting``**](./R/graphs/3dplot/graph3D.md)  > 3D plotting an manipulation of graph objects with spatial attributes
 
