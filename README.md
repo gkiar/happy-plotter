@@ -18,5 +18,7 @@ Well, lucky for you (and future me), here lives code that will help you make bea
 
 [**``3D Scatter Plots``**](./R/3d/rgl3d.html)  > 3D scatter plots and other tricks 
 
-
 [**``Correlation Plots``**](./R/CorrPlots.ipynb)  > Nice colors with block outlines.
+
+[**``Panel Plots``**](./R/LatticePanelPlots.ipynb)  > Lattice panel
+examples.
