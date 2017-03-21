@@ -66,6 +66,7 @@ g$layout <- layouts
 rglplot(g, layout = g$layout,
         vertex.label = NA, vertex.size = 12, vertex.color='tomato1',
         edge.width = log10(get.edge.attribute(g, 'weight')), edge.color='paleturquoise1')
+rgl.postscript('./mygraph.pdf', fmt = 'pdf')
 ```
 
 If we also wish to save our graph we can use the following block to save it as a pdf:  `rgl.postscript('./mygraph.pdf', fmt = 'pdf')`
