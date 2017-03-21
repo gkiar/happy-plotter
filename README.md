@@ -24,3 +24,9 @@ Well, lucky for you (and future me), here lives code that will help you make bea
 
 [**``Panel Plots``**](./R/LatticePanelPlots.ipynb)  > Lattice panel
 examples.
+
+[**``Histograms``**](./R/histograms/Histograms.ipynb)  >  Histogram
+examples in ggplot2
+
+[**``Heatmaps``**](./R/heatmap.ipynb)  >  Replacement for heatmap.2 in
+ggplot2.
